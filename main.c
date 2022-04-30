@@ -1,29 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
-    char op;
-    double num1, num2;
+int main(void){
+    int num1, num2;
+    char opr;
+    printf("operation:");
+    scanf("%d %c %d", &num1, &opr, &num2);
 
-    printf("*calculadora com as 4 operações básicas*");
-    printf("operação: ");
+    switch (opr)
+    {
+        case '+':
+            printf("result: %d", (num1 + num2));
+            break;
 
-    scanf("%d", "%c", "%d", &num1, &op, &num2);
+        case '-':
+            printf("%d", (num1 - num2));
+            break;
 
-    switch (op) {
-    case "+": printf(num1 + " + " + num2 + "= "+ (num1+num2))
+        case '*':
+            printf("%d", (num1 * num2));
+            break;
 
-    case "-": printf(num1 + " - " + num2 + "= "+ (num1-num2))
+        case '/':
+            printf("%d", (num1 / num2));
+            break;
 
-    case "*": printf(num1 + " * " + num2 + "= "+ (num1*num2))
-
-    case "/": printf(num1 + " / " + num2 + "= "+ (num1/num2))
-
-    default:
-        printf("digite corretamente!");
-
+        default:
+            printf("nÃ£o foi possivel identificar a operaÃ§Ã£o!");
+            break;
     }
-
     return 0;
 }
+
+
